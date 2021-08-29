@@ -2,19 +2,22 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 
-export const CreateUser = () => {
-  const { register, handleSubmit } = useForm();
-  const history = useHistory()
+export const UserForm = ({ user }) => {
+  const { register, handleSubmit } = useForm({
+    defaultValues: { fname: user ? user.fname : "" },
+  });
+  const history = useHistory();
 
   const onSubmit = handleSubmit((data) => {
     alert(JSON.stringify(data));
-    history.push("/")
+    history.push("/");
   });
+
   return (
     <div className="container">
       <div className="mt-5">
         <h3>
-          <center>User Registration</center>
+          <center>Edit User Profile</center>
         </h3>
         <form onSubmit={onSubmit}>
           <div className="form-group">
@@ -62,7 +65,7 @@ export const CreateUser = () => {
               {...register("address", { required: "Required" })}
             />
             <br></br>
-          </div> 
+          </div>
           <div className="form-group">
             <button type="submit" className="btn btn-primary">
               Register

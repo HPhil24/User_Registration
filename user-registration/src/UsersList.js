@@ -6,8 +6,8 @@ export const UsersList = () => {
 
   useEffect(() => {
     setItems([
-        { name: "Phil", id: 0 },
-        { name: "Hagos", id: 1 },
+        { fname: "Phil", id: 0 },
+        { fname: "Hagos", id: 1 },
     ]);
   }, []);
 
@@ -20,7 +20,8 @@ export const UsersList = () => {
         <table className="table table-striped table-hover table-responsive table-dark">
           <thead>
             <tr>
-              <th>Name</th>
+              <th>First Name</th>
+              <th>Last Name</th>
               <th>Email</th>
               <th>Address</th>
               <th>Action</th>
@@ -31,7 +32,10 @@ export const UsersList = () => {
             items.map(user => (
               <tr key={user.id}>
                 <td>
-                  {user.name}
+                  {user.fname}
+                </td>
+                <td>
+                  {user.lname}
                 </td>
                 <td>
                   {user.email}

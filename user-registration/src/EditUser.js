@@ -1,7 +1,14 @@
-import React from "react"
+import React, { useState, useEffect } from "react";
+import { UserForm } from "./UserForm";
 
 export const EditUser = () => {
+  const [user, setUser] = useState();
 
-    return <div className="container">Edit User Account</div>
+  useEffect(() => {
+    setUser({
+      fname: "Phil",
+    });
+  }, []);
 
-}
+  return user ? <UserForm user={user} /> : <div>Loading...</div>;
+};
