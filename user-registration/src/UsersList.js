@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { getUsers } from "./api";
 
 export const UsersList = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    setItems([
-        { fname: "Phil", id: 0 },
-        { fname: "Hagos", id: 1 },
-    ]);
+    const fetchItems = async () => {
+      const users = await getUsers()
+      setItems(users)
+    }
+  fetchItems()
   }, []);
 
   return (
