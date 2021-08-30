@@ -45,6 +45,35 @@ app.get("/:id", (req, res) => {
   });
 });
 
+app.post("/:id", (req, res) => {
+  const id = req.params.id;
+  User.findById(id, (err, user) => {
+    if(!user){
+      res.status(404).send("User not found")
+    } else {
+      user.fname = req.body.fname
+      user.mname = req.body.mname
+      user.lname = req.body.lname
+      user.birthday = req.body.birthday
+      user.age = req.body.age
+      user.sex = req.body.sex
+      user.pronoun = req.body.pronoun
+      user.email = req.body.email
+      user.number = req.body.number
+      user.address1 = req.body.address1
+      user.address2 = req.body.address2
+      user.city = req.body.city
+      user.state = req.body.state
+      user.zipcode = req.body.zipcode
+
+      user.save().then((user) => {
+        res.json(user)
+      })
+      .catch((err) => res.status(500).send(err.message))
+    }
+  });
+});
+
 app.listen(PORT, () => {
   console.log("Server is running on port " + PORT);
 });

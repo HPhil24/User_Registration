@@ -23,30 +23,70 @@ export const UsersList = () => {
           <thead>
             <tr>
               <th>First Name</th>
-              <th>Last Name</th>
+              <th>Middle Name</th>
+              <th>Last Name</th>                           
+              <th>Birthday</th>
+              <th>Age</th>
+              <th>Sex</th>
+              <th>Pronoun</th>
               <th>Email</th>
-              <th>Address</th>
+              <th>Number</th>
+              <th>Address1</th>
+              <th>Address2</th>
+              <th>City</th> 
+              <th>State</th>
+              <th>Zipcode</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
             {
             items.map(user => (
-              <tr key={user.id}>
+              <tr key={user._id}>
                 <td>
                   {user.fname}
                 </td>
                 <td>
+                  {user.mname}
+                </td>
+                <td>
                   {user.lname}
+                </td>                
+                <td>
+                  {user.birthday}
+                </td>
+                <td>
+                  {user.age}
+                </td>
+                <td>
+                  {user.sex}
+                </td>
+                <td>
+                  {user.pronoun}
                 </td>
                 <td>
                   {user.email}
                 </td>
                 <td>
-                  {user.address}
+                  {user.number}
                 </td>
                 <td>
-                  <Link to={`/edit/${user.id}`}>Edit</Link>
+                  {user.address1}
+                </td>
+                <td>
+                  {user.address2}
+                </td>
+                <td>
+                  {user.city}
+                </td>
+                <td>
+                  {user.state}
+                </td>
+                <td>
+                  {user.zipcode}
+                </td>
+                <td>
+                  <Link to={`/edit/${user._id}`}>Edit</Link>
                 </td>
               </tr>
             ))
