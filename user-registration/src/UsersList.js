@@ -19,9 +19,10 @@ export const UsersList = () => {
         <h3>
           <center>Registered Users</center>
         </h3>
-        <table className="table table-striped table-hover table-responsive table-dark">
+        <br></br>
+        <table className="table table-striped table-hover table-responsive table-light">
           <thead>
-            <tr>
+            <tr className="table-dark">
               <th>First Name</th>
               <th>Middle Name</th>
               <th>Last Name</th>                           

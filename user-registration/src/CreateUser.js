@@ -15,7 +15,7 @@ export const CreateUser = () => {
     <div className="container">
       <div className="mt-5">
         <h3>
-          <center>Create User Profile</center>
+          <center>REGISTRATION</center>
         </h3>
         <UserForm onSubmit={onSubmit} />
       </div>

@@ -26,7 +26,7 @@ export const UserForm = ({ user, onSubmit }) => {
   });
 
   return (
-    <div className="container1">
+    <div className="container">
     <form onSubmit={submitHandler}>
       <div className="form-group">
         <br></br>
@@ -52,7 +52,7 @@ export const UserForm = ({ user, onSubmit }) => {
               id="mname"
               placeholder="Middle Name"
               autoComplete="off"
-              {...register("mname", { required: "Required" })}
+              {...register("mname",)}
             />
           </div>
           <div className="col-sm-2">
