@@ -52,7 +52,6 @@ app.post("/:id", (req, res) => {
       res.status(404).send("User not found")
     } else {
       user.fname = req.body.fname
-      user.mname = req.body.mname
       user.lname = req.body.lname
       user.birthday = req.body.birthday
       user.age = req.body.age
@@ -61,7 +60,6 @@ app.post("/:id", (req, res) => {
       user.email = req.body.email
       user.number = req.body.number
       user.address1 = req.body.address1
-      user.address2 = req.body.address2
       user.city = req.body.city
       user.state = req.body.state
       user.zipcode = req.body.zipcode
@@ -72,6 +70,18 @@ app.post("/:id", (req, res) => {
       .catch((err) => res.status(500).send(err.message))
     }
   });
+});
+
+app.delete("/:id", async (req, res) => {
+    let id = req.params.id;
+    let user;
+    try {
+      user = await User.findByIdAndDelete(id);
+    } catch (err) {
+      throw err;
+    }
+    if (user) return res.json({ deleted: true });
+    return res.json({ deleted: false });
 });
 
 app.listen(PORT, () => {

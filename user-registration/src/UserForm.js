@@ -31,8 +31,8 @@ export const UserForm = ({ user, onSubmit }) => {
       <div className="form-group">
         <br></br>
         <div className="row">
-          <div className="col-sm-2 offset-md-3">
-            <label htmlFor="text">First Name</label>
+          <div className="col-sm-3 offset-md-3">
+            <label htmlFor="text">First Name*</label>
             <input
               className="form-control"
               type="text"
@@ -43,20 +43,8 @@ export const UserForm = ({ user, onSubmit }) => {
               {...register("fname", { required: "Required" })}
             />
           </div>
-          <div className="col-sm-2">
-            <label htmlFor="text">Middle Name</label>
-            <input
-              className="form-control"
-              type="text"
-              name="mname"
-              id="mname"
-              placeholder="Middle Name"
-              autoComplete="off"
-              {...register("mname",)}
-            />
-          </div>
-          <div className="col-sm-2">
-            <label htmlFor="text">Last Name</label>
+          <div className="col-sm-3">
+            <label htmlFor="text">Last Name*</label>
             <input
               className="form-control"
               type="text"
@@ -72,7 +60,7 @@ export const UserForm = ({ user, onSubmit }) => {
 
         <div className="row">
           <div className="col-sm-3 offset-md-3">
-            <label htmlFor="birthday">Birthday</label>
+            <label htmlFor="birthday">Birthday*</label>
             <input
               placeholder="Birthday"
               className="form-control"
@@ -86,7 +74,7 @@ export const UserForm = ({ user, onSubmit }) => {
             />
           </div>
           <div className="col-sm-3">
-            <label htmlFor="age">Age</label>
+            <label htmlFor="age">Age*</label>
             <input
               placeholder="Age"
               className="form-control"
@@ -106,7 +94,7 @@ export const UserForm = ({ user, onSubmit }) => {
 
         <div className="row">
           <div className="col-sm-3 offset-md-3">
-            <label htmlFor="sex">Sex</label>
+            <label htmlFor="sex">Sex*</label>
             <select
               className="form-control"
               name="age"
@@ -124,7 +112,7 @@ export const UserForm = ({ user, onSubmit }) => {
             </select>
           </div>
           <div className="col-sm-3">
-            <label htmlFor="pronoun">Preferred Pronoun</label>
+            <label htmlFor="pronoun">Preferred Pronoun*</label>
             <select
               className="form-control"
               name="pronoun"
@@ -145,7 +133,7 @@ export const UserForm = ({ user, onSubmit }) => {
         <br></br>
         <div className="row">
           <div className="col-sm-3 offset-md-3">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Email*</label>
             <input
               className="form-control"
               type="email"
@@ -157,7 +145,7 @@ export const UserForm = ({ user, onSubmit }) => {
             />
           </div>
           <div className="col-sm-3">
-            <label htmlFor="number">Phone Number</label>
+            <label htmlFor="number">Phone Number*</label>
             <input
               className="form-control"
               type="tel"
@@ -175,28 +163,16 @@ export const UserForm = ({ user, onSubmit }) => {
         <br></br>
 
         <div className="row">
-          <div className="col-sm-3 offset-md-3">
-            <label htmlFor="address">Address 1</label>
+          <div className="col-sm-6 offset-md-3">
+            <label htmlFor="address">Address*</label>
             <input
               className="form-control"
               type="text"
               name="address1"
               id="address1"
-              placeholder="Address 1"
+              placeholder="Address"
               autoComplete="off"
               {...register("address1", { required: "Required" })}
-            />
-          </div>
-          <div className="col-sm-3">
-            <label htmlFor="address">Address 2</label>
-            <input
-              className="form-control"
-              type="text"
-              name="address2"
-              id="address2"
-              placeholder="Address 2"
-              autoComplete="off"
-              {...register("address2")}
             />
           </div>
         </div>
@@ -204,7 +180,7 @@ export const UserForm = ({ user, onSubmit }) => {
 
         <div className="row">
           <div className="col-sm-2 offset-md-3">
-            <label htmlFor="city">City:</label>
+            <label htmlFor="city">City*</label>
             <input
               className="form-control"
               type="text"
@@ -216,7 +192,7 @@ export const UserForm = ({ user, onSubmit }) => {
             />
           </div>
           <div className="col-sm-2">
-            <label htmlFor="state">State</label>
+            <label htmlFor="state">State*</label>
             <input
               className="form-control"
               type="text"
@@ -224,11 +200,11 @@ export const UserForm = ({ user, onSubmit }) => {
               id="state"
               placeholder="State"
               autoComplete="off"
-              {...register("state")}
+              {...register("state", { required: "Required" })}
             />
           </div>
           <div className="col-sm-2">
-            <label htmlFor="zipcode">Zip Code</label>
+            <label htmlFor="zipcode">Zip Code*</label>
             <input
               placeholder="Zip Code"
               className="form-control"
@@ -247,7 +223,7 @@ export const UserForm = ({ user, onSubmit }) => {
       </div>
       <br></br>
       <div className="form-group d-flex justify-content-center">
-        <button type="submit" className="btn btn-primary btn-block">
+        <button type="submit" className="btn btn-warning btn-block">
           REGISTER
         </button>
       </div>

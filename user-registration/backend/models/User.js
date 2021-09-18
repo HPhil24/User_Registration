@@ -4,9 +4,6 @@ const User = mongoose.Schema({
   fname: {
     type: String,
   },
-  mname: {
-    type: String,
-  },
   lname: {
     type: String,
   },
@@ -31,9 +28,6 @@ const User = mongoose.Schema({
   address1: {
     type: String,
   },
-  address2: {
-    type: String,
-  },
   city: {
     type: String,
   },
@@ -43,7 +37,6 @@ const User = mongoose.Schema({
   zipcode: {
     type: String,
   },
-  
 
 });
 
